@@ -1,0 +1,131 @@
+{
+  "model_version": "tw-flood-xgb-20261031",
+  "trained_at": "2026-10-31T17:42:34.147634+00:00",
+  "algorithm": "XGBClassifier",
+  "class_weighting": "scale_pos_weight=3.0",
+  "features": [
+    "log_rain1",
+    "log_rain3",
+    "log_rain7",
+    "log_rain30",
+    "temp_mean7",
+    "rain_days7",
+    "rain_peak3",
+    "discharge_change3",
+    "discharge_max7",
+    "log_q_ratio",
+    "log_q_ratio_max3",
+    "month_sin",
+    "month_cos"
+  ],
+  "data_sources": [
+    "Open-Meteo historical weather API",
+    "Open-Meteo Flood API (GloFAS river discharge)",
+    "India Flood Inventory-Impacts (IFI-Impacts), Zenodo 11069835",
+    "Documented Punjab flood events in backend/lib/punjab.py"
+  ],
+  "scope": "Punjab district-day weather/discharge risk, 1995-2025",
+  "geographic_coverage": {
+    "weather_and_discharge_features": "Punjab districts only",
+    "inventory_label_source": "India-wide",
+    "india_wide_weather_model": false
+  },
+  "samples": 36894,
+  "positive_samples": 3459,
+  "evaluation": "chronological event-year holdout",
+  "held_out_events": [
+    {
+      "test_year": 2015,
+      "positive_districts": 10,
+      "event_hit_rate": 1.0,
+      "threshold": 0.25,
+      "accuracy": 0.5475,
+      "balanced_accuracy": 0.3111,
+      "roc_auc": 0.2882,
+      "average_precision": 0.0609,
+      "precision": 0.0057,
+      "recall": 0.0233,
+      "brier": 0.1798
+    },
+    {
+      "test_year": 2018,
+      "positive_districts": 3,
+      "event_hit_rate": 1.0,
+      "threshold": 0.25,
+      "accuracy": 0.6459,
+      "balanced_accuracy": 0.7228,
+      "roc_auc": 0.8705,
+      "average_precision": 0.0213,
+      "precision": 0.0033,
+      "recall": 0.8,
+      "brier": 0.0768
+    },
+    {
+      "test_year": 2019,
+      "positive_districts": 21,
+      "event_hit_rate": 1.0,
+      "threshold": 0.25,
+      "accuracy": 0.5172,
+      "balanced_accuracy": 0.5371,
+      "roc_auc": 0.6406,
+      "average_precision": 0.6247,
+      "precision": 0.697,
+      "recall": 0.1431,
+      "brier": 0.4336
+    },
+    {
+      "test_year": 2020,
+      "positive_districts": 20,
+      "event_hit_rate": 1.0,
+      "threshold": 0.25,
+      "accuracy": 0.7089,
+      "balanced_accuracy": 0.5475,
+      "roc_auc": 0.5282,
+      "average_precision": 0.3301,
+      "precision": 0.3077,
+      "recall": 0.2595,
+      "brier": 0.183
+    },
+    {
+      "test_year": 2022,
+      "positive_districts": 12,
+      "event_hit_rate": 1.0,
+      "threshold": 0.25,
+      "accuracy": 0.6497,
+      "balanced_accuracy": 0.4928,
+      "roc_auc": 0.5707,
+      "average_precision": 0.0096,
+      "precision": 0.0077,
+      "recall": 0.3333,
+      "brier": 0.0871
+    },
+    {
+      "test_year": 2023,
+      "positive_districts": 22,
+      "event_hit_rate": 1.0,
+      "threshold": 0.25,
+      "accuracy": 0.7897,
+      "balanced_accuracy": 0.4869,
+      "roc_auc": 0.5975,
+      "average_precision": 0.111,
+      "precision": 0.0771,
+      "recall": 0.115,
+      "brier": 0.0961
+    },
+    {
+      "test_year": 2025,
+      "positive_districts": 17,
+      "event_hit_rate": 1.0,
+      "threshold": 0.25,
+      "accuracy": 0.6435,
+      "balanced_accuracy": 0.5163,
+      "roc_auc": 0.5481,
+      "average_precision": 0.1188,
+      "precision": 0.1031,
+      "recall": 0.3595,
+      "brier": 0.1202
+    }
+  ],
+  "inventory_events": 5273,
+  "warning": "Metrics are retrospective and not a guarantee of future flood prediction accuracy. Labels inherit the limitations of a multi-source inventory. Confirm with live gauges, forecasts, satellite observations, and official authorities."
+}

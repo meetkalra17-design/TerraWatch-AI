@@ -1,0 +1,217 @@
+{
+  "theme": "dark",
+  "archetype": "Dark Mission Control & Tactical Aerospace Telemetry (Deep Void Obsidian #070B14, Satellite Cyan #00E5FF, Amber Telemetry #FFB300, Critical Hazard Coral #FF4D4D, Matrix Radar Emerald #00E676)",
+  "colors": {
+    "surfaces": [
+      {
+        "name": "page",
+        "kind": "solid",
+        "bg": "#070B14",
+        "on_bg": "#F1F5F9",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "link": "#38BDF8",
+          "error": "#FF4D4D",
+          "success": "#00E676",
+          "warning": "#FFB300",
+          "accent_cyan": "#00E5FF"
+        }
+      },
+      {
+        "name": "sidebar",
+        "kind": "solid",
+        "bg": "#0B1120",
+        "on_bg": "#F1F5F9",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "active_item": "#00E5FF",
+          "border": "#1E293B",
+          "badge_bg": "#0F243A"
+        }
+      },
+      {
+        "name": "card_panel",
+        "kind": "solid",
+        "bg": "#0D1527",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "border": "#1E2D4A",
+          "metric_number": "#00E5FF",
+          "metric_sub": "#CBD5E1",
+          "hazard_high": "#FF4D4D",
+          "hazard_med": "#FFB300",
+          "hazard_low": "#00E676"
+        }
+      },
+      {
+        "name": "tactical_header",
+        "kind": "glass",
+        "contrast_against": "#070B14",
+        "guarantee": "scrim: rgba(11, 17, 32, 0.85) with backdrop-blur-xl border-b border-cyan-500/20",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#94A3B8"
+      },
+      {
+        "name": "satellite_modal",
+        "kind": "solid",
+        "bg": "#0B132B",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#94A3B8"
+      },
+      {
+        "name": "map_overlay_hud",
+        "kind": "glass",
+        "contrast_against": "#0A101D",
+        "guarantee": "scrim: rgba(7, 11, 20, 0.88) backdrop-blur-md border border-cyan-500/30",
+        "on_bg": "#F1F5F9",
+        "on_bg_muted": "#94A3B8"
+      },
+      {
+        "name": "auth_card",
+        "kind": "solid",
+        "bg": "#0B1120",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#94A3B8"
+      }
+    ],
+    "accent": "#00E5FF",
+    "on_accent": "#040810",
+    "status": {
+      "critical": "#FF4D4D",
+      "warning": "#FFB300",
+      "nominal": "#00E676",
+      "monitoring": "#38BDF8"
+    }
+  },
+  "typography": {
+    "font_family_heading": "Outfit Variable",
+    "font_family_sans": "Geist Variable",
+    "font_family_mono": "JetBrains Mono Variable",
+    "scale_px": {
+      "display": 48,
+      "h1": 36,
+      "h2": 28,
+      "h3": 20,
+      "h4": 16,
+      "body": 15,
+      "caption": 13,
+      "telemetry_mono": 13
+    },
+    "typesetting_rules": {
+      "telemetry_labels": "uppercase tracking-[0.18em] text-[11px] font-mono text-cyan-400/90 font-medium",
+      "metric_values": "font-mono font-bold tracking-tight text-slate-100",
+      "section_headings": "font-sans font-bold tracking-tight text-slate-100",
+      "body_text": "leading-relaxed text-slate-300 font-sans"
+    }
+  },
+  "entry_surfaces": {
+    "/login": "branded split login — mission control satellite HUD telemetry visual on left panel with live orbital status badge, authentication form card with sample operator quick-login buttons on right panel",
+    "/register": "branded split register — planetary monitoring system clearance overview on left panel, registration form with role selection on right panel",
+    "/": "dark mission control main dashboard — top tactical status bar (active satellites, UTC clock, simulated telemetry mode), 4 KPI tactical cards, 12-col asymmetric grid with interactive satellite trend chart, live flood alert feed, and recent orbital analysis queue"
+  },
+  "visual_enhancers": {
+    "scanlines": "subtle tactical scanlines gradient on map & imagery previews",
+    "glowing_radar_pings": "pulsing radar beacon rings on high-severity flood hotspots",
+    "split_slider": "smooth drag-divider with high-contrast dual imagery rendering and AI flood mask toggling (infrared / water polygon mask / thermal depth)",
+    "tactical_borders": "1px borders with border-cyan-500/20 and hover:border-cyan-400/50 glow",
+    "terminal_chips": "monospace telemetry badges with live blinking status dots"
+  },
+  "layouts_and_grids": {
+    "shell": "Fixed left tactical sidebar (64px collapsed / 240px expanded with toggle), sticky top telemetry header with live Indian Standard Time + UTC dual clock and status indicators, fluid scrollable main content stage (p-6 to p-8)",
+    "dashboard_grid": "Grid 12-col: 4x col-span-3 KPI Stat cards (Total Analyses, Inundated Land km², Critical Hazard Zones, Active Basins Monitored), Main Row: col-span-8 Recharts Inundation Trend Chart + col-span-4 Live Flood Alerts stream; Secondary Row: col-span-12 Recent Analysis Mission Table with instant filter and drawer inspect",
+    "upload_flow": "Dual dropzone split (Pre-disaster Baseline SAR/Optical vs Post-disaster Inundated Sentinel imagery), alongside Region Coordinates selector (preset hot zones: Assam Brahmaputra, Kerala Periyar, Bihar Kosi, Godavari Basin, Odisha Mahanadi + custom Lat/Lng), capture date pickers, and 'Run AI Spectral Inundation Engine' trigger with step-by-step telemetry progress simulation",
+    "compare_interface": "Full-height interactive before/after split slider viewport with 0-100% position thumb, overlay transparency slider, flood mask colormap toggle (Fluorescent Cyan / Hazard Coral / Thermal Indigo), pixel histogram difference card, and change metrics sidebar",
+    "map_interface": "Leaflet map with CARTO Dark Matter / Stamen Dark tiles, dynamic GeoJSON flood boundary polygons, severity circle markers (Critical: Coral Red, Moderate: Amber, Low: Emerald), interactive click popup inspection cards, flood layer filter pill toggles, and coordinate crosshair HUD",
+    "reports_interface": "Comprehensive orbital intelligence report view with high-res metrics summary, affected population estimates (Indian Census simulated grid data), infrastructure vulnerability breakdown, and one-click PDF (formatted multi-page viewable/printable report) + CSV export"
+  },
+  "motion_and_micro_interactions": {
+    "hover_lift": "transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), border-color 180ms ease",
+    "telemetry_pulse": "animate-pulse on critical alert indicators and active satellite sensor blips",
+    "slider_scrub": "instant hardware-accelerated CSS left position update without lag",
+    "map_marker_bounce": "subtle spring on marker click and polygon layer focus",
+    "tab_transition": "smooth layout animation on dashboard filter switches"
+  },
+  "accessibility": {
+    "color_contrast": "All text tokens exceed WCAG AA 4.5:1 on their declared surface. Monospace telemetry uses high luminance cyan (#00E5FF) and slate-100 (#F8FAFC) against #070B14 and #0D1527.",
+    "keyboard_nav": "Full keyboard tab support on slider, map filters, form inputs, data tables, and export buttons.",
+    "aria_labels": "Explicit data-testid on every interactive button, input, comparison thumb, map layer toggle, and export trigger."
+  },
+  "image_urls": {
+    "hero_satellite_orbit": {
+      "url": "https://images.unsplash.com/photo-1708738793054-32b71e3fc822?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwzfHxzYXRlbGxpdGUlMjBlYXJ0aCUyMG1hcCUyMHZpZXd8ZW58MHx8fHwxNzkzNDMxMTQ1fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Two Earth observation satellites in high orbit with solar arrays deployed",
+      "usage": "Auth page visual showcase, mission briefing background scrim"
+    },
+    "satellite_coastline_pass": {
+      "url": "https://images.unsplash.com/photo-1460186136353-977e9d6085a1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwyfHxzYXRlbGxpdGUlMjBlYXJ0aCUyMG1hcCUyMHZpZXd8ZW58MHx8fHwxNzkzNDMxMTQ1fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Satellite optical scan view above coastal and river geography",
+      "usage": "Pre-disaster baseline sample image in Upload and Comparison modules"
+    },
+    "satellite_earth_night_lights": {
+      "url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwxfHxzYXRlbGxpdGUlMjBlYXJ0aCUyMG1hcCUyMHZpZXd8ZW58MHx8fHwxNzkzNDMxMTQ1fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Orbital nighttime observation view of Earth telemetry network",
+      "usage": "Dashboard mission overview card banner and analytical backdrop"
+    },
+    "flooded_river_aerial_severe": {
+      "url": "https://images.unsplash.com/photo-1553392636-d15d8f919c8d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzN8MHwxfHNlYXJjaHw0fHxmbG9vZCUyMHJpdmVyJTIwYWVyaWFsJTIwdmlld3xlbnwwfHx8fDE3OTM0MzExNDV8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Aerial view of flooded river basin inundating plains and embankment",
+      "usage": "Post-disaster flooded sample image in comparison slider and analysis engine"
+    },
+    "flooded_valley_wetland": {
+      "url": "https://images.unsplash.com/photo-1691515182613-4b6604049b5b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzN8MHwxfHNlYXJjaHwxfHxmbG9vZCUyMHJpdmVyJTIwYWVyaWFsJTIwdmlld3xlbnwwfHx8fDE3OTM0MzExNDV8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Inundated agricultural wetlands and submerged riverbanks",
+      "usage": "Secondary sample dataset for quick testing and report generator"
+    },
+    "river_plain_pre_flood": {
+      "url": "https://images.unsplash.com/photo-1609359923548-cd7fe10364eb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzN8MHwxfHNlYXJjaHwzfHxmbG9vZCUyMHJpdmVyJTIwYWVyaWFsJTIwdmlld3xlbnwwfHx8fDE3OTM0MzExNDV8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Green river plains before monsoon overflow",
+      "usage": "Baseline imagery for Bihar / Assam flood case studies"
+    }
+  },
+  "required_packages": {
+    "npm": [
+      "leaflet",
+      "@types/leaflet",
+      "lucide-react",
+      "recharts",
+      "jspdf",
+      "html2canvas"
+    ],
+    "pip": [
+      "fastapi",
+      "uvicorn",
+      "motor",
+      "pymongo",
+      "pydantic"
+    ]
+  },
+  "component_hierarchy": [
+    "frontend/src/App.tsx -> Router definition (/login, /register, /, /upload, /compare, /map, /reports, /reports/:id)",
+    "frontend/src/components/layout/TacticalSidebar.tsx -> Navigation bar with telemetry mode blips & live metrics",
+    "frontend/src/components/layout/MissionHeader.tsx -> Dual IST/UTC clock, simulated backend status, quick-demo switch, user profile & logout",
+    "frontend/src/pages/Dashboard.tsx -> Mission Control KPI Stats, Recharts area flood inundation trend, live hazard feed, quick analysis launcher",
+    "frontend/src/pages/SatelliteUpload.tsx -> Drag-and-drop dual satellite image analyzer with simulated spectral NDVI/MNDWI radar processing",
+    "frontend/src/pages/BeforeAfterCompare.tsx -> Interactive interactive split slider, mask opacity, color-grading filter, change statistics breakdown",
+    "frontend/src/pages/InteractiveFloodMap.tsx -> Fullscreen Leaflet dark map with flood polygons, hotspot pulse markers, severity filters & inspection drawer",
+    "frontend/src/pages/ResultsReports.tsx -> Analysis archive table, detailed disaster report view, statistical breakdown & PDF/CSV export engine",
+    "frontend/src/pages/AuthLogin.tsx -> Branded split login with mission telemetry demo credentials",
+    "frontend/src/pages/AuthRegister.tsx -> Branded registration interface"
+  ],
+  "instructions_to_main_agent": [
+    "1. Set up Tailwind v4 index.css with Outfit (heading), Geist (sans), and JetBrains Mono (telemetry numbers/labels). Set class='dark' in index.html to ensure dark mission control styling.",
+    "2. Install 'leaflet' and '@types/leaflet' in frontend via `yarn add leaflet @types/leaflet jspdf html2canvas` and import 'leaflet/dist/leaflet.css' in main.tsx or InteractiveFloodMap.tsx.",
+    "3. Use CARTO Dark Matter tiles ('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png') for the dark Leaflet map theme to match the Mission Control aesthetic.",
+    "4. Ensure simulated backend data in FastAPI contains rich realistic seed analyses across major flood-prone zones (Brahmaputra Basin, Kosi River Bihar, Kerala Periyar, Godavari Delta, Mahanadi Odisha, Yamuna Delhi) with lat/lng coordinates, inundated area (km²), affected population, severity score (Critical/High/Moderate/Low), confidence %, and before/after satellite image URLs.",
+    "5. For Before/After image comparison, build a robust draggable slider with keyboard arrow accessibility, synchronized zoom/pan options, and flood mask overlay toggle (cyan/coral heat overlay).",
+    "6. In Satellite Upload, provide pre-loaded sample datasets (e.g. 'Assam Floods 2024', 'Kerala Monsoons', 'Kosi Inundation') so testing and demonstration is instant and seamless without requiring manual image file uploads.",
+    "7. Include both PDF generation (using jsPDF / print stylesheet) and CSV export for flood intelligence reports.",
+    "8. Add `data-testid` to all interactive buttons, inputs, links, slider handles, and report triggers for verification."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "Avoid AI slop: Do not make generic centered cards or washed-out gradients. Stick to deep void blacks (#070B14), tactical border strokes (1px border-slate-800 with cyan-500/20 glow), and sharp monospace telemetry accents.",
+    "Every interaction needs tactile micro-feedback: hover border shifts, button press compression, live blinking radar status dots.",
+    "Never use full-screen flat gradients; use subtle textured grid lines, tactical borders, and glassmorphism headers with backdrop-blur.",
+    "All navigation and action buttons must include unambiguous role-based `data-testid` attributes."
+  ]
+}
